@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table.asciitable3
+{
+border-collapse:collapse;
+}
+table.asciitable3, td, th
+{
+border: 2px solid #aaaaaa;
+text-align:center;
+margin: 30px;
+padding:0.4em;
+}
+table.asciitable3 th
+{
+    background: #e1e1e1;
+    font-size:large;
+}
+</style>
+</head>
+
+<body>
+
+<h2>ASCII Character Chart</h2>
+		<table class="asciitable3">
+			<tr>
+				<th>ASCII</th>
+				<th>HEX</th>
+				<th>CHAR</th>
+				<th>ASCII</th>
+				<th>HEX</th>
+				<th>CHAR</th>
+			</tr>
+
+			<script>
+				var res1, res2;
+				var hex1, hex2;
+				for (var i=0;i < 128;i++)
+				{
+					res1 = String.fromCharCode(i);
+					res2 = String.fromCharCode(i + 1);
+					hex1 = i.toString(16);
+					hex2 = (i + 1).toString(16);
+					document.write("<tr>");
+					document.write("<td>" + i + "</td>");
+					document.write("<td>" + hex1 + "</td>");
+					document.write("<td>" + res1 + "</td>");
+					document.write("<td>" + (i + 1) + "</td>");
+					document.write("<td>" + hex2 + "</td>");
+					document.write("<td>" + res2 + "</td>");
+					document.write("</tr>");
+					i = i + 1;
+				}
+			</script>
+
+		</table>
+</body>
+</html>
