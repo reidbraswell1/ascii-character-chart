@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="StyleSheet" type="text/css" href="asciitable.css">
+	</head>
+
+	<body>
+		<h2 class="h3">ASCII Character Chart</h2>
+
+		<script>
+			function pad1(num, size)
+			{
+				var s = "000000000" + num;
+				return s.substr(s.length-size);
+			}
+
+			function pad2(num, size)
+			{
+				var s = num + "";
+				while (s.length < size) s = "0" + s;
+				return s;
+			}
+
+			function checkASCII(i)
+			{
+				var char;
+				switch(i)
+				{
+					case 0:
+						char="NUL (null)";
+						break;
+					case 1:
+						char="SOH (start of heading)";
+						break;
+					case 2:
+						char="STX (start of text)";
+						break;
+					case 3:
+						char="ETX (end of text)";
+						break;
+					case 4:
+						char="EOT (end of transmission)";
+						break;
+					case 5:
+						char="ENQ (enquiry)";
+						break;
+					case 6:
+						char="ACK (acknowledge)";
+						break;
+					case 7:
+						char="BEL (bell)";
+						break;
+					case 8:
+						char="BS (backspace)";
+						break;
+					case 9:
+						char="TAB (horizontal tab)";
+						break;
+					case 10:
+						char="LF (NL line feed, new line)";
+						break;
+					case 11:
+						char="VT (vertical tab)";
+						break;
+					case 12:
+						char="FF (NP form feed, new page)";
+						break;
+					case 13:
+						char="CR (carriage return)";
+						break;
+					case 14:
+						char="SO (shift out)";
+						break;
+					case 15:
+						char="SI (shift in)";
+						break;
+					case 16:
+						char="DLE (data link escape)";
+						break;
+					case 17:
+						char="DC1 (device control 1)";
+						break;
+					case 18:
+						char="DC2 (device control 2)";
+						break;
+					case 19:
+						char="DC3 (device control 3)";
+						break;
+					case 20:
+						char="DC4 (device control 4)";
+						break;
+					case 21:
+						char="NAK (negative acknowledgement)";
+						break;
+					case 22:
+						char="SYN (synchronus idle)";
+						break;
+					case 23:
+						char="ETB (end of trans. block)";
+						break;
+					case 24:
+						char="CAN (cancel)";
+						break;
+					case 25:
+						char="EM (end of medium)";
+						break;
+					case 26:
+						char="SUB (substitute)";
+						break;
+					case 27:
+						char="ESC (escape)";
+						break;
+					case 28:
+						char="FS (file separator)";
+						break;
+					case 29:
+						char="GS (group separator)";
+						break;
+					case 30:
+						char="RS (record seperator)";
+						break;
+					case 31:
+						char="US (unit separator)";
+						break;
+					case 32:
+						char="SPACE";
+						break;
+					case 127:
+						char="DEL (delete)";
+						break;
+					default:
+						char="test";
+						break;
+				}
+				return char;
+			}
+		</script>
+
+		<table class="asciitable1">
+			<tr>
+				<th>DEC</th>
+				<th>HEX</th>
+				<th>OCT</th>
+				<th>CHAR</th>
+				<th>DEC</th>
+				<th>HEX</th>
+				<th>OCT</th>
+				<th>CHAR</th>
+			</tr>
+
+			<script>
+				var char1, char2;
+				var hex1, hex2;
+				var oct1, oct2;
+				for (var i=0;i <= 127;i++)
+				{
+					hex1 = i.toString(16);
+					hex2 = (i + 1).toString(16);
+					oct1 = i.toString(8);
+					oct2 = (i + 1).toString(8);
+
+					if ((i >= 0 && i <= 32) || i == 127)
+					{
+						char1 = checkASCII(i);
+					}
+					else
+					{
+						char1 = String.fromCharCode(i);
+					}
+
+					if (((i + 1) >= 0 && (i + 1) <= 32) || (i + 1) == 127)
+					{
+						char2 = checkASCII(i + 1);
+					}
+					else
+					{
+						char2 = String.fromCharCode(i + 1);
+					}
+
+					document.write("<tr>");
+					document.write("<td>" + i + "</td>");
+					document.write("<td>" + hex1 + "</td>");
+					document.write("<td>" + pad1(oct1,3) + "</td>");
+					document.write("<td style='text-align:left'>" + char1 + "</td>");
+					document.write("<td>" + (i + 1) + "</td>");
+					document.write("<td>" + hex2 + "</td>");
+					document.write("<td>" + pad1(oct2,3) + "</td>");
+					document.write("<td style='text-align:left'>" + char2 + "</td>");
+					document.write("</tr>");
+					i = i + 1;
+				}
+			</script>
+
+		</table>
+	</body>
+</html>
