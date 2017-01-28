@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="StyleSheet" type="text/css" href="asciitable2.css">
+	</head>
+
+	<body>
+		<h2 class="h3">ASCII Character Chart</h2>
+
+		<script>
+			function pad1(num, size)
+			{
+				var s = "000000000" + num;
+				return s.substr(s.length-size);
+			}
+
+			function pad2(num, size)
+			{
+				var s = num + "";
+				while (s.length < size) s = "0" + s;
+				return s;
+			}
+
+			function checkASCII(i)
+			{
+				var ch;
+				switch(i)
+				{
+					case 0:
+						ch="NUL (null)";
+						break;
+					case 1:
+						ch="SOH (start of heading)";
+						break;
+					case 2:
+						ch="STX (start of text)";
+						break;
+					case 3:
+						ch="ETX (end of text)";
+						break;
+					case 4:
+						ch="EOT (end of transmission)";
+						break;
+					case 5:
+						ch="ENQ (enquiry)";
+						break;
+					case 6:
+						ch="ACK (acknowledge)";
+						break;
+					case 7:
+						ch="BEL (bell)";
+						break;
+					case 8:
+						ch="BS (backspace)";
+						break;
+					case 9:
+						ch="TAB (horizontal tab)";
+						break;
+					case 10:
+						ch="LF (NL line feed, new line)";
+						break;
+					case 11:
+						ch="VT (vertical tab)";
+						break;
+					case 12:
+						ch="FF (NP form feed, new page)";
+						break;
+					case 13:
+						ch="CR (carriage return)";
+						break;
+					case 14:
+						ch="SO (shift out)";
+						break;
+					case 15:
+						ch="SI (shift in)";
+						break;
+					case 16:
+						ch="DLE (data link escape)";
+						break;
+					case 17:
+						ch="DC1 (device control 1)";
+						break;
+					case 18:
+						ch="DC2 (device control 2)";
+						break;
+					case 19:
+						ch="DC3 (device control 3)";
+						break;
+					case 20:
+						ch="DC4 (device control 4)";
+						break;
+					case 21:
+						ch="NAK (negative acknowledgement)";
+						break;
+					case 22:
+						ch="SYN (synchronus idle)";
+						break;
+					case 23:
+						ch="ETB (end of trans. block)";
+						break;
+					case 24:
+						ch="CAN (cancel)";
+						break;
+					case 25:
+						ch="EM (end of medium)";
+						break;
+					case 26:
+						ch="SUB (substitute)";
+						break;
+					case 27:
+						ch="ESC (escape)";
+						break;
+					case 28:
+						ch="FS (file separator)";
+						break;
+					case 29:
+						ch="GS (group separator)";
+						break;
+					case 30:
+						ch="RS (record seperator)";
+						break;
+					case 31:
+						ch="US (unit separator)";
+						break;
+					case 32:
+						ch="SPACE";
+						break;
+					case 127:
+						ch="DEL (delete)";
+						break;
+					default:
+						ch="test";
+						break;
+				}
+				return ch;
+			}
+		</script>
+
+		<table class="asciitable0">
+			<tr class="asciitable0">
+				<script>
+					var offset=0;
+					var char1;
+					var hex;
+					var oct;
+					var row;
+
+					for (var table=0; table <= 3; table++)
+					{	
+						document.write("<td class='asciitable0'>");
+						document.write("<table class='asciitable1'>");
+						document.write("<tr>");
+						document.write("<th class='asciitable1A'>DEC</th>");
+						document.write("<th class='asciitable1A'>HEX</th>");
+						document.write("<th class='asciitable1A'>OCT</th>");
+						document.write("<th class='asciitable1A'>CHAR</th>");
+						document.write("</tr>");
+
+						for (row=(0+offset); row <= (31+offset); row++)
+						{
+							hex = row.toString(16);
+							oct = row.toString(8);
+
+							if ((row >= 0 && row <= 32) || row == 127)
+							{
+								char1 = checkASCII(row);
+							}
+							else
+							{
+								char1 = String.fromCharCode(row);
+							}
+
+							document.write("<tr>");
+							document.write("<td class='asciitable1A'>" + row + "</td>");
+							document.write("<td class='asciitable1A'>" + hex + "</td>");
+							document.write("<td class='asciitable1A'>" + pad1(oct,3) + "</td>");
+							document.write("<td class='asciitable1A' style='text-align:left'>" + char1 + "</td>");
+							document.write("</tr>");
+						}//for//
+						offset=row;
+						document.write("</table>");
+						document.write("</td>");
+					}//for//
+				</script>
+			</tr>
+		</table>
+	</body>
+</html>
