@@ -1,0 +1,51 @@
+table.asciitable0
+{
+	border-collapse:collapse;
+	/*-- margin:0 auto; (Will Center table) -- */
+	margin:0 auto;
+}
+
+tr.asciitable0
+{
+
+}
+td.asciitable0
+{
+	vertical-align:top;
+}
+
+/* Individual tables displayed accross screen */
+table.asciitable1
+{
+	border-collapse:collapse;
+	/*-- margin:0 auto; (Will Center table) -- */
+	margin:10px;
+}
+
+table.asciitable1
+{
+	border: 2px solid #aaaaaa;
+}
+
+/* td and th definitions for asciitable1 */
+td.asciitable1A
+{
+	border: 2px solid #aaaaaa;
+	text-align:center;
+	padding:0.4em;
+}
+
+th.asciitable1A
+{
+	border: 2px solid #aaaaaa;
+	text-align:center;
+	padding:0.4em;
+	background: #e1e1e1;
+	font-size:large;
+}
+
+h2.h3
+{
+	margin:30px;
+	text-align: center;
+}
