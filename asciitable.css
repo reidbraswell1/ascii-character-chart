@@ -1,0 +1,37 @@
+/* Method #1 */
+table.asciitable1
+{
+border-collapse:collapse;
+/*-- margin:0 auto; (Will Center table) -- */
+margin:30px;
+}
+table.asciitable1 th, td
+{
+border: 2px solid #aaaaaa;
+text-align:center;
+padding:0.4em;
+}
+table.asciitable1 th
+{
+background: #e1e1e1;
+font-size:large;
+}
+
+h2.h3
+{
+margin:30px;
+}
+
+table.asciitable0
+{
+	border-collapse:collapse;
+}
+
+tr.asciitable0
+{
+
+}
+td.asciitable0
+{
+	vertical-align:top;
+}
